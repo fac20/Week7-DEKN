@@ -37,9 +37,7 @@ function getId(input) {
 
 // function getLocation(input) {
 // 	return db
-// 		.query(`SE
-
-// LECT * FROM travel_posts WHERE location = '${input}'`)
+// 		.query(`SELECT * FROM travel_posts WHERE location = '${input}'`)
 // 		.then((result) => result.rows);
 // }s
 
