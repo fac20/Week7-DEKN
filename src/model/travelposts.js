@@ -1,8 +1,7 @@
 const db = require('../database/connection');
 
 function getAllPost() {
-	return;
-	db.query('SELECT * FROM travel_posts'), then((result) => result.rows);
+	return db.query('SELECT * FROM travel_posts').then((result) => result.rows);
 }
 
 // users, travel_posts
@@ -17,3 +16,4 @@ function getAllPost() {
 //       values
 //     );
 //   }
+module.exports = { getAllPost };
