@@ -54,3 +54,71 @@ server.listen(PORT, () => {
 });
 
 module.exports = server;
+
+module.exports = server;
+// server.get('/posts/:location', travelposts.getLocation);
+
+// 8. GET all posts from one user
+server.get('/posts/:id', travelposts.getId);
+
+// error handling
+
+// server.use(handleErrors);
+
+// listening to server
+server.listen(PORT, () => {
+	console.log(`Listening on http://localhost:${PORT}`);
+});
+
+module.exports = server;
+
+module.exports = server;
+// server.get('/posts/:location', travelposts.getLocation);
+
+// 8. GET all posts from one user
+server.get('/posts/:id', travelposts.getId);
+
+// error handling
+
+// server.use(handleErrors);
+
+// listening to server
+server.listen(PORT, () => {
+	console.log(`Listening on http://localhost:${PORT}`);
+});
+
+module.exports = server;
+
+module.exports = server;
+// server.get('/posts/:location', travelposts.getLocation);
+
+// 8. GET all posts from one user
+server.get('/posts/:id', travelposts.getId);
+
+// error handling
+
+// server.use(handleErrors);
+
+// listening to server
+server.listen(PORT, () => {
+	console.log(`Listening on http://localhost:${PORT}`);
+});
+
+module.exports = server;
+
+module.exports = server;
+// server.get('/posts/:location', travelposts.getLocation);
+
+// 8. GET all posts from one user
+server.get('/posts/:id', travelposts.getId);
+
+// error handling
+
+// server.use(handleErrors);
+
+// listening to server
+server.listen(PORT, () => {
+	console.log(`Listening on http://localhost:${PORT}`);
+});
+
+module.exports = server;
