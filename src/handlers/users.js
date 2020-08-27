@@ -18,13 +18,13 @@ function signUp(req, res, next) {
 	const password = body.password;
 	console.log("body", body);
 	//bcrypt the password
-	// bcrypt
-	// 	.genSalt(18) //returns salt
-	// 	.then((salt) => bcrypt.hash(password, salt))
-	// 	.then((hashedPwd) => {
-	// 		console.log(hashedPwd);
-	// 		usersModel.createUser({ username, password: hashedPwd });
-	// 	})
+	bcrypt
+		.genSalt(18) //returns salt
+		.then((salt) => bcrypt.hash(password, salt))
+		.then((hashedPwd) => {
+			console.log(hashedPwd);
+			usersModel.createUser({ username, password: hashedPwd });
+		})
 		.then((user) => {
 			const token = jwt.sign(username, SECRET, {
 				expiresIn: "1h",
