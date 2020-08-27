@@ -1,7 +1,7 @@
-const express = require("express");
-const users = require("./handlers/users");
-const travelposts = require("./handlers/travelposts");
-const handleErrors = require("./middleware/error");
+const express = require('express');
+const users = require('./handlers/users');
+const travelposts = require('./handlers/travelposts');
+const handleErrors = require('./middleware/error');
 
 const PORT = process.env.PORT || 3000;
 
@@ -12,11 +12,11 @@ server.use(express.json());
 // routes below
 
 // 1. GET home page - see all posts
-// server.get("/", travelposts.getAllPosts);
+server.get('/', travelposts.getAllPosts);
 // 2. POST user login details
 // server.post("/login", express.urlencoded());
 // 3. POST sign up
-server.post("/signup", express.urlencoded(), users.signUp);
+server.post('/signup', express.urlencoded(), users.signUp);
 // 4. POST travel post
 
 // 5. PUT (update) travel post
