@@ -1,6 +1,6 @@
 BEGIN;
 
-  DROP TABLE IF EXISTS travel_posts, users
+  DROP TABLE IF EXISTS users, travel_posts
   CASCADE;
 
 CREATE TABLE users

@@ -16,7 +16,7 @@ CREATE TABLE travel_posts
   user_id INTEGER REFERENCES users(id) ,
   location VARCHAR(255) NOT NULL,
   message TEXT,
-  image VARCHAR(255)
+  image TEXT
 );
 
 
