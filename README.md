@@ -8,8 +8,8 @@ Travel stories
 ## Installation Locally
 1. Clone this repo
 2. Run `npm install`
-3. Create local database
-4. create `.env` file with the DATABASE_URL, JWT_SECRET, TEST_DATABASE_URL
+3. Create local database using the `init.sql` located in the database folder
+4. Create `.env` file with the DATABASE_URL, JWT_SECRET, TEST_DATABASE_URL
 
 ## Running tests
 1. Complete steps 1-4 in Installation Locally
