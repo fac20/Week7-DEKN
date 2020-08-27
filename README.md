@@ -38,7 +38,7 @@ Travel stories
 
 - [x] Route to show all posts
 - [ ] Route to show posts of particular places
-- [ ] Route for users (Authentication to post)
+- [ ] Route for users to post (Authentication required)
 - [x] Sign up for users
 - [ ] Login for users
 
@@ -63,6 +63,10 @@ Travel stories
 - [ ] Tests for server routes and database access
 - [ ] Not process user input as SQL commands
 - [ ] Hidden environment variables (i.e. not on GitHub)
+
+## Known Issues
+- [ ] Authentication for users posting required
+- [ ] Relating posts to users required
 
 ## Team
 * Jihyun - Scrum Facilitator
