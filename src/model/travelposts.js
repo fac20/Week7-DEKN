@@ -4,6 +4,26 @@ function getAllPosts() {
 	return db.query('SELECT * FROM travel_posts').then((result) => result.rows);
 }
 
+function createNewPost(data) {
+	const userValues = [data.location, data.message, data.image];
+	console.log(userValues);
+	return db
+		.query(
+			'INSERT INTO travel_posts (location,message,image) VALUES ($1,$2,$3) RETURNING id',
+			userValues
+		)
+		.then((result) => result.rows);
+}
+
+// const userValues = [data.username, data.location, data.password];
+// //  Place the new user data into the table with a db.query
+// return db
+//   .query(
+// 	"INSERT INTO users(username, location, password) VALUES($1, $2, $3) RETURNING id",
+// 	userValues
+//   )
+//   .then(result => result.rows);
+
 // function getPostsBylocation() {
 // 	return db.query('SELECT * FROM travel_posts WHERE location = finsbury park');
 // }
@@ -17,7 +37,9 @@ function getId(input) {
 
 // function getLocation(input) {
 // 	return db
-// 		.query(`SELECT * FROM travel_posts WHERE location = '${input}'`)
+// 		.query(`SE
+
+// LECT * FROM travel_posts WHERE location = '${input}'`)
 // 		.then((result) => result.rows);
 // }s
 
@@ -28,4 +50,5 @@ function getId(input) {
 //       values
 //     );
 //   }
-module.exports = { getAllPosts, getId };
+
+module.exports = { getAllPosts, getId, createNewPost };
