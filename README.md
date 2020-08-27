@@ -1,5 +1,7 @@
 # Week7-DEKN 
 
+API link: [](https://travel--jar.herokuapp.com/)
+
 ## Theme
 Travel stories
 
@@ -15,9 +17,9 @@ Travel stories
 3. Run `npm test`
 
 ## User Stories
-- [ ] As an API user, I want to: get a list of all available resources
+- [x] As an API user, I want to: get a list of all available resources
 - [ ] As an API user, I want to: get all the information on a specific resource
-- [ ] As an API user, I want to: create a new resource
+- [x] As an API user, I want to: create a new resource
 - [ ] As an API user, I want to: update an existing resource
 - [ ] As an API user, I want to: delete an existing resource
 - [ ] As an API user, I want to: only be able to change an existing resource if I am authenticated to do so
@@ -34,9 +36,11 @@ Travel stories
 <details>
 <summary>Routes</summary>
 
-- [ ] Route to show all posts
+- [x] Route to show all posts
 - [ ] Route to show posts of particular places
 - [ ] Route for users (Authentication to post)
+- [x] Sign up for users
+- [ ] Login for users
 
 </details> 
 
