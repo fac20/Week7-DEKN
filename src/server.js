@@ -12,11 +12,11 @@ server.use(express.json());
 // routes below
 
 // 1. GET home page - see all posts
-server.get("/", travelposts.getAllPosts);
+// server.get("/", travelposts.getAllPosts);
 // 2. POST user login details
-server.post("/login", ))
-// 3. POST sign in
-
+// server.post("/login", express.urlencoded());
+// 3. POST sign up
+server.post("/signup", express.urlencoded(), users.signUp);
 // 4. POST travel post
 
 // 5. PUT (update) travel post
@@ -29,7 +29,7 @@ server.post("/login", ))
 
 // error handling
 
-server.user(handleErrors);
+// server.use(handleErrors);
 
 // listening to server
 server.listen(PORT, () => {
