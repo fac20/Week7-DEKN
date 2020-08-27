@@ -1,6 +1,6 @@
 # Week7-DEKN 
 
-API link: [](https://travel--jar.herokuapp.com/)
+API link: [click here](https://travel--jar.herokuapp.com/)
 
 ## Theme
 Travel stories
