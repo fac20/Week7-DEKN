@@ -3,6 +3,17 @@
 ## Theme
 Travel stories
 
+## Installation Locally
+1. Clone this repo
+2. Run `npm install`
+3. Create local database
+4. create `.env` file with the DATABASE_URL, JWT_SECRET, TEST_DATABASE_URL
+
+## Running tests
+1. Complete steps 1-4 in Installation Locally
+2. Create test database 
+3. Run `npm test`
+
 ## User Stories
 - [ ] As an API user, I want to: get a list of all available resources
 - [ ] As an API user, I want to: get all the information on a specific resource
@@ -57,6 +68,7 @@ Travel stories
 
 ## Tech Stack
 * Miro
+* [wheeldecide](https://wheeldecide.com/)
 
 ## Non-Tech Stack
 * Bed :bed:
