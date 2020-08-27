@@ -16,17 +16,16 @@ function signUp(req, res, next) {
 	const body = req.body;
 	const username = body.username;
 	const password = body.password;
-	console.log('body', body);
 	//bcrypt the password
 	bcrypt
 		.genSalt(18) //returns salt
 		.then((salt) => bcrypt.hash(password, salt))
 		.then((hashedPwd) => {
-			console.log(hashedPwd);
-			usersModel.createUser({ username, password: hashedPwd }); // inserts new data into database
+			return usersModel.createUser({ username: username, password: hashedPwd }); // inserts new data into database
 		})
-		.then(() => {
-			const token = jwt.sign(username, SECRET, {
+		.then((user) => {
+			console.log(user);
+			const token = jwt.sign(user, SECRET, {
 				expiresIn: '1h',
 			});
 			console.log(token);
