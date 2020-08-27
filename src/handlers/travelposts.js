@@ -31,7 +31,18 @@ function getId(req, res, next) {
 		.catch(next);
 }
 
+function createPost(req, res, next) {
+	const body = req.body; // we get an object with place, message, and img link
+	travelpostModel
+		.createNewPost(body)
+		.then((posts) => {
+			res.status(201).send(posts);
+		})
+		.catch(next);
+}
+
 module.exports = {
 	getAllPosts,
 	getId,
+	createPost,
 };
