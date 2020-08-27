@@ -11,6 +11,40 @@ function login(req, res, next) {
 	usersModel.getUser(username).then();
 }
 
+function signUp(req, res, next) {
+	// take information from sign up form
+	const body = req.body;
+	const username = body.username;
+	const password = body.password;
+	console.log("body", body);
+	//bcrypt the password
+	// bcrypt
+	// 	.genSalt(18) //returns salt
+	// 	.then((salt) => bcrypt.hash(password, salt))
+	// 	.then((hashedPwd) => {
+	// 		console.log(hashedPwd);
+	// 		usersModel.createUser({ username, password: hashedPwd });
+	// 	})
+		.then((user) => {
+			const token = jwt.sign(username, SECRET, {
+				expiresIn: "1h",
+			});
+			console.log(token);
+			const response = {
+				username: username,
+				access_token: token,
+			};
+
+			res.status(201).send(response);
+		})
+		.catch(next);
+
+	// get information from users database
+
+	// compare sign up user name and password with database username and password
+}
+
 module.exports = {
 	login,
+	signUp,
 };
