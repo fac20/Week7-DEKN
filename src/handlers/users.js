@@ -1,7 +1,7 @@
-const jwt = require("jsonwebtoken");
-const dotenv = require("dotenv").config();
-const bcrypt = require("bcryptjs");
-const usersModel = require("../model/users");
+const jwt = require('jsonwebtoken');
+const dotenv = require('dotenv').config();
+const bcrypt = require('bcryptjs');
+const usersModel = require('../model/users');
 
 const SECRET = process.env.JWT_SECRET;
 
@@ -16,25 +16,24 @@ function signUp(req, res, next) {
 	const body = req.body;
 	const username = body.username;
 	const password = body.password;
-	console.log("body", body);
+	console.log('body', body);
 	//bcrypt the password
-	// bcrypt
-	// 	.genSalt(18) //returns salt
-	// 	.then((salt) => bcrypt.hash(password, salt))
-	// 	.then((hashedPwd) => {
-	// 		console.log(hashedPwd);
-	// 		usersModel.createUser({ username, password: hashedPwd });
-	// 	})
-		.then((user) => {
+	bcrypt
+		.genSalt(18) //returns salt
+		.then((salt) => bcrypt.hash(password, salt))
+		.then((hashedPwd) => {
+			console.log(hashedPwd);
+			usersModel.createUser({ username, password: hashedPwd }); // inserts new data into database
+		})
+		.then(() => {
 			const token = jwt.sign(username, SECRET, {
-				expiresIn: "1h",
+				expiresIn: '1h',
 			});
 			console.log(token);
 			const response = {
 				username: username,
 				access_token: token,
 			};
-
 			res.status(201).send(response);
 		})
 		.catch(next);
