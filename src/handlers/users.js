@@ -18,7 +18,7 @@ function signUp(req, res, next) {
 	const password = body.password;
 	//bcrypt the password
 	bcrypt
-		.genSalt(18) //returns salt
+		.genSalt(10) //returns salt
 		.then((salt) => bcrypt.hash(password, salt))
 		.then((hashedPwd) => {
 			return usersModel.createUser({
