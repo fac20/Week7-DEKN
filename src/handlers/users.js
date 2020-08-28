@@ -21,7 +21,10 @@ function signUp(req, res, next) {
 		.genSalt(18) //returns salt
 		.then((salt) => bcrypt.hash(password, salt))
 		.then((hashedPwd) => {
-			return usersModel.createUser({ username: username, password: hashedPwd }); // inserts new data into database
+			return usersModel.createUser({
+				username: username,
+				password: hashedPwd,
+			}); // inserts new data into database
 		})
 		.then((user) => {
 			console.log(user);

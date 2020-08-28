@@ -1,13 +1,15 @@
 # Week7-DEKN 
 
+API link: [click here](https://travel--jar.herokuapp.com/)
+
 ## Theme
 Travel stories
 
 ## Installation Locally
 1. Clone this repo
 2. Run `npm install`
-3. Create local database
-4. create `.env` file with the DATABASE_URL, JWT_SECRET, TEST_DATABASE_URL
+3. Create local database using the `init.sql` located in the database folder
+4. Create `.env` file with the DATABASE_URL, JWT_SECRET, TEST_DATABASE_URL
 
 ## Running tests
 1. Complete steps 1-4 in Installation Locally
@@ -15,9 +17,9 @@ Travel stories
 3. Run `npm test`
 
 ## User Stories
-- [ ] As an API user, I want to: get a list of all available resources
+- [x] As an API user, I want to: get a list of all available resources
 - [ ] As an API user, I want to: get all the information on a specific resource
-- [ ] As an API user, I want to: create a new resource
+- [x] As an API user, I want to: create a new resource
 - [ ] As an API user, I want to: update an existing resource
 - [ ] As an API user, I want to: delete an existing resource
 - [ ] As an API user, I want to: only be able to change an existing resource if I am authenticated to do so
@@ -34,9 +36,11 @@ Travel stories
 <details>
 <summary>Routes</summary>
 
-- [ ] Route to show all posts
+- [x] Route to show all posts
 - [ ] Route to show posts of particular places
-- [ ] Route for users (Authentication to post)
+- [ ] Route for users to post (Authentication required)
+- [x] Sign up for users
+- [ ] Login for users
 
 </details> 
 
@@ -59,6 +63,10 @@ Travel stories
 - [ ] Tests for server routes and database access
 - [ ] Not process user input as SQL commands
 - [ ] Hidden environment variables (i.e. not on GitHub)
+
+## Known Issues
+- [ ] Authentication for users posting required
+- [ ] Relating posts to users required
 
 ## Team
 * Jihyun - Scrum Facilitator
