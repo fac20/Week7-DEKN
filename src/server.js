@@ -1,7 +1,7 @@
 const express = require('express');
 const users = require('./handlers/users');
 const travelposts = require('./handlers/travelposts');
-const handleErrors = require('./middleware/error');
+const handleError = require('./middleware/error');
 
 const PORT = process.env.PORT || 3000;
 
@@ -32,6 +32,7 @@ server.get('/posts/:id', travelposts.getId);
 // error handling
 
 // server.use(handleErrors);
+server.use(handleError);
 
 // listening to server
 server.listen(PORT, () => {
