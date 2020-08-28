@@ -9,7 +9,8 @@ function login(req, res, next) {
 	const username = req.body.username;
 	const password = req.body.password;
 	usersModel.getUser(username).then((userObject) => {
-			// check the password in the database against the password we get});
+		// check the password in the database against the password we get});
+	});
 }
 
 function signUp(req, res, next) {
