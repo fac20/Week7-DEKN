@@ -1,7 +1,7 @@
 const express = require('express');
 const users = require('./handlers/users');
 const travelposts = require('./handlers/travelposts');
-const handleErrors = require('./middleware/error');
+const handleError = require('./middleware/error');
 
 const PORT = process.env.PORT || 3000;
 
@@ -32,6 +32,7 @@ server.get('/posts/:id', travelposts.getId);
 // error handling
 
 // server.use(handleErrors);
+server.use(handleError);
 
 // listening to server
 server.listen(PORT, () => {
@@ -39,157 +40,3 @@ server.listen(PORT, () => {
 });
 
 module.exports = server;
-<<<<<<< HEAD
-// server.get('/posts/:location', travelposts.getLocation);
-
-// 8. GET all posts from one user
-server.get('/posts/:id', travelposts.getId);
-
-// error handling
-
-// server.use(handleErrors);
-
-// listening to server
-server.listen(PORT, () => {
-	console.log(`Listening on http://localhost:${PORT}`);
-});
-
-module.exports = server;
-
-module.exports = server;
-// server.get('/posts/:location', travelposts.getLocation);
-
-// 8. GET all posts from one user
-server.get('/posts/:id', travelposts.getId);
-
-// error handling
-
-// server.use(handleErrors);
-
-// listening to server
-server.listen(PORT, () => {
-	console.log(`Listening on http://localhost:${PORT}`);
-});
-
-module.exports = server;
-
-module.exports = server;
-// server.get('/posts/:location', travelposts.getLocation);
-
-// 8. GET all posts from one user
-server.get('/posts/:id', travelposts.getId);
-
-// error handling
-
-// server.use(handleErrors);
-
-// listening to server
-server.listen(PORT, () => {
-	console.log(`Listening on http://localhost:${PORT}`);
-});
-
-module.exports = server;
-
-module.exports = server;
-// server.get('/posts/:location', travelposts.getLocation);
-
-// 8. GET all posts from one user
-server.get('/posts/:id', travelposts.getId);
-
-// error handling
-
-// server.use(handleErrors);
-
-// listening to server
-server.listen(PORT, () => {
-	console.log(`Listening on http://localhost:${PORT}`);
-});
-
-module.exports = server;
-
-module.exports = server;
-// server.get('/posts/:location', travelposts.getLocation);
-
-// 8. GET all posts from one user
-server.get('/posts/:id', travelposts.getId);
-
-// error handling
-
-// server.use(handleErrors);
-
-// listening to server
-server.listen(PORT, () => {
-	console.log(`Listening on http://localhost:${PORT}`);
-});
-
-module.exports = server;
-
-module.exports = server;
-// server.get('/posts/:location', travelposts.getLocation);
-
-// 8. GET all posts from one user
-server.get('/posts/:id', travelposts.getId);
-
-// error handling
-
-// server.use(handleErrors);
-
-// listening to server
-server.listen(PORT, () => {
-	console.log(`Listening on http://localhost:${PORT}`);
-});
-
-module.exports = server;
-
-module.exports = server;
-// server.get('/posts/:location', travelposts.getLocation);
-
-// 8. GET all posts from one user
-server.get('/posts/:id', travelposts.getId);
-
-// error handling
-
-// server.use(handleErrors);
-
-// listening to server
-server.listen(PORT, () => {
-	console.log(`Listening on http://localhost:${PORT}`);
-});
-
-module.exports = server;
-
-module.exports = server;
-// server.get('/posts/:location', travelposts.getLocation);
-
-// 8. GET all posts from one user
-server.get('/posts/:id', travelposts.getId);
-
-// error handling
-
-// server.use(handleErrors);
-
-// listening to server
-server.listen(PORT, () => {
-	console.log(`Listening on http://localhost:${PORT}`);
-});
-
-module.exports = server;
-
-module.exports = server;
-// server.get('/posts/:location', travelposts.getLocation);
-
-// 8. GET all posts from one user
-server.get('/posts/:id', travelposts.getId);
-
-// error handling
-
-// server.use(handleErrors);
-
-// listening to server
-server.listen(PORT, () => {
-	console.log(`Listening on http://localhost:${PORT}`);
-});
-
-module.exports = server;
-=======
->>>>>>> d9d7992be34dbf78f39548d45cfa9e210163b921
