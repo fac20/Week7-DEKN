@@ -14,7 +14,7 @@ server.use(express.json());
 // 1. GET home page - see all posts
 server.get('/', travelposts.getAllPosts);
 // 2. POST user login details
-// server.post("/login", express.urlencoded(),users.login);
+server.post('/login', express.urlencoded(), users.login);
 // 3. POST sign up
 server.post('/signup', express.urlencoded(), users.signUp);
 // 4. POST travel post

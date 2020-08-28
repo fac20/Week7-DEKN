@@ -8,7 +8,7 @@ const SECRET = process.env.JWT_SECRET;
 function login(req, res, next) {
 	const username = req.body.username;
 	const password = req.body.password;
-	usersModel.getUser(username).then();
+	usersModel.getUser(username).then((userObject) => {});
 }
 
 function signUp(req, res, next) {
@@ -16,7 +16,6 @@ function signUp(req, res, next) {
 	const body = req.body;
 	const username = body.username;
 	const password = body.password;
-	//bcrypt the password
 	bcrypt
 		.genSalt(10) //returns salt
 		.then((salt) => bcrypt.hash(password, salt))

@@ -16,10 +16,11 @@ function createUser(userObject) {
 }
 
 function getUser(username) {
-	console.log(username);
 	return db
 		.query('SELECT * FROM users WHERE username=($1)', [username])
-		.then((user) => user.rows[0])
+		.then((user) => {
+			return user.rows[0];
+		})
 		.catch((error) => error);
 }
 
