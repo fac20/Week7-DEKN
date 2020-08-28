@@ -8,13 +8,20 @@ Travel stories
 ## Installation Locally
 1. Clone this repo
 2. Run `npm install`
-3. Create local database using the `init.sql` located in the database folder
-4. Create `.env` file with the DATABASE_URL, JWT_SECRET, TEST_DATABASE_URL
+3. Create local database called `travel__jar` using the `init.sql` located in the src/database folder
+4. Create `.env` file with the DATABASE_URL, JWT_SECRET
+<details>
+  <summary> .env to include </summary>
+DATABASE_URL=postgres://myuser:mypassword@localhost:5432/travel__jar
+TEST_DATABASE_URL=postgres://myuser:mypassword@localhost:5432/travel__jar__test
+JWT_SECRET=insert your secret
+</details>
 
 ## Running tests
 1. Complete steps 1-4 in Installation Locally
-2. Create test database 
-3. Run `npm test`
+2. Create local database called `travel__jar` using the `test.sql` located in the src/database folder
+3. Update `.env` file to include TEST_DATABASE_URL=postgres://myuser:mypassword@localhost:5432/travel__jar__test
+4. Run `npm test`
 
 ## User Stories
 - [x] As an API user, I want to: get a list of all available resources
@@ -32,6 +39,12 @@ Travel stories
 4. Anyone can view posts of a particular place
 
 ## Backend Stories
+
+1. `GET /` - will show all the travel posts
+2. `POST /signup` - the body for the request requires a url form username and password as keys and values
+3. `POST /login` - the body for the request requires a url form username and password as keys and values
+4. `POST /posts` - the body for the request requires a url form username and password as keys and values
+5. `GET /posts/user.id` - get all the posts the user has listed
 
 <details>
 <summary>Routes</summary>
