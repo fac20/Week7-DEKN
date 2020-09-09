@@ -40,6 +40,25 @@ function createPost(req, res, next) {
 		})
 		.catch(next);
 }
+function deletePost(req, res, next) {}
+// function del(req, res, next) {
+// 	const dogId = req.params.id;
+// 	const userId = req.user.id;
+// 	model
+// 	  .getDog(dogId)
+// 	  .then((dog) => {
+// 		if (dog.owner !== userId) {
+// 		  const error = new Error("Unauthorized");
+// 		  error.status = 401;
+// 		  next(error);
+// 		} else {
+// 		  model.deleteDog(dogId).then(() => {
+// 			res.status(204).send();
+// 		  });
+// 		}
+// 	  })
+// 	  .catch(next);
+//   }
 
 module.exports = {
 	getAllPosts,

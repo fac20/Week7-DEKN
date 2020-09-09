@@ -15,6 +15,10 @@ function createNewPost(data) {
 		.then((result) => result.rows);
 }
 
+// function deletePost (req){
+
+// }
+
 // const userValues = [data.username, data.location, data.password];
 // //  Place the new user data into the table with a db.query
 // return db
