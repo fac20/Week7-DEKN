@@ -40,7 +40,7 @@ function createPost(req, res, next) {
 		})
 		.catch(next);
 }
-function deletePost(req, res, next) {}
+// function deletePost(req, res, next) {}
 // function del(req, res, next) {
 // 	const dogId = req.params.id;
 // 	const userId = req.user.id;
