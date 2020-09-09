@@ -8,9 +8,27 @@ const SECRET = process.env.JWT_SECRET;
 function login(req, res, next) {
 	const username = req.body.username;
 	const password = req.body.password;
-	usersModel.getUser(username).then((userObject) => {
-		// check the password in the database against the password we get});
-	});
+	bcrypt
+		.genSalt(10) //returns salt
+		.then((salt) => bcrypt.hash(password, salt))
+		.then((hashedPwd) => {
+			usersModel.getUser(username)
+				.then((userObject) => {
+					const storedPassword = userObject.password;
+					if (hashedPwd !== storedPassword) {
+						const error = new Error("Unauthorized");
+						error.status = 401;
+						next(error);
+					} else {
+						const token = jwt.sign(userObject, SECRET, {
+							expiresIn: '1h',
+						});
+						res.status(200).send({ access_token: token })
+					}
+				})
+				.catch(next);
+		})
+		.catch(next);
 }
 
 function signUp(req, res, next) {
@@ -33,11 +51,7 @@ function signUp(req, res, next) {
 				expiresIn: '1h',
 			});
 			console.log(token);
-			const response = {
-				username: username,
-				access_token: token,
-			};
-			res.status(201).send(response);
+			res.status(201).send({ access_token: token });
 		})
 		.catch(next);
 
@@ -46,7 +60,12 @@ function signUp(req, res, next) {
 	// compare sign up user name and password with database username and password
 }
 
+function logout(req, res, next) {
+	res.status(200).send({ access_token: 0 })
+}
+
 module.exports = {
 	login,
 	signUp,
-};
+	logout,
+}
