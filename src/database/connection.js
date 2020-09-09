@@ -4,14 +4,13 @@ const dotenv = require('dotenv');
 // load the environment variables from the ".env" file
 dotenv.config();
 
-
 // grab the URL for our local database
 let connectionString = process.env.DATABASE_URL;
 
 const options = {
 	connectionString: connectionString,
-	ssl: { rejectUnauthorized: false },
-}
+	// ssl: { rejectUnauthorized: false },
+};
 
 // test string
 if (process.env.NODE_ENV === 'test') {
