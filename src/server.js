@@ -2,12 +2,14 @@ const express = require('express');
 const users = require('./handlers/users');
 const travelposts = require('./handlers/travelposts');
 const handleError = require('./middleware/error');
+const verifyUser = require("./middleware/auth");
 
 const PORT = process.env.PORT || 3000;
 
 const server = express();
 
 server.use(express.json());
+
 
 // routes below
 
@@ -18,7 +20,7 @@ server.post('/login', express.urlencoded(), users.login);
 // 3. POST sign up
 server.post('/signup', express.urlencoded(), users.signUp);
 // 4. POST travel post
-server.post('/posts', express.urlencoded(), travelposts.createPost);
+server.post('/posts', express.urlencoded(), verifyUser, travelposts.createPost);
 // 5. PUT (update) travel post
 
 // 6. DEL travel post
