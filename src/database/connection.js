@@ -4,8 +4,14 @@ const dotenv = require('dotenv');
 // load the environment variables from the ".env" file
 dotenv.config();
 
+
 // grab the URL for our local database
 let connectionString = process.env.DATABASE_URL;
+
+const options = {
+	connectionString: connectionString,
+	ssl: { rejectUnauthorized: false },
+}
 
 // test string
 if (process.env.NODE_ENV === 'test') {
@@ -14,6 +20,6 @@ if (process.env.NODE_ENV === 'test') {
 
 // create a pool of available connections
 // to use this to query our database
-const db = new pg.Pool({ connectionString: connectionString });
+const db = new pg.Pool(options);
 
 module.exports = db;
