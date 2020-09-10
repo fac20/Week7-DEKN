@@ -3,12 +3,20 @@ const users = require('./handlers/users');
 const travelposts = require('./handlers/travelposts');
 const handleError = require('./middleware/error');
 const verifyUser = require("./middleware/auth");
+const cors = require("cors");
 
 const PORT = process.env.PORT || 3000;
 
 const server = express();
 
 server.use(express.json());
+
+server.use(cors(corsOptions));
+
+const corsOptions = {
+	origin: 'https://travel-jar.netlify.app/',
+	optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 
 
 // routes below
