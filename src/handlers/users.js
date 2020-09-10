@@ -8,25 +8,23 @@ const SECRET = process.env.JWT_SECRET;
 function login(req, res, next) {
 	const username = req.body.username;
 	const password = req.body.password;
-	bcrypt
-		.genSalt(10) //returns salt
-		.then((salt) => bcrypt.hash(password, salt))
-		.then((hashedPwd) => {
-			usersModel.getUser(username)
-				.then((userObject) => {
-					const storedPassword = userObject.password;
-					if (hashedPwd !== storedPassword) {
-						const error = new Error("Unauthorized");
-						error.status = 401;
-						next(error);
-					} else {
-						const token = jwt.sign(userObject, SECRET, {
-							expiresIn: '1h',
-						});
-						res.status(200).send({ access_token: token })
-					}
-				})
-				.catch(next);
+
+	usersModel
+		.getUser(username)
+		.then((userObject) => {
+			const storedPassword = userObject.password;
+			const unHashedPwd = bcrypt.compare(password, storedPassword);
+
+			if (!unHashedPwd) {
+				const error = new Error('Unauthorized');
+				error.status = 401;
+				next(error);
+			} else {
+				const token = jwt.sign(userObject, SECRET, {
+					expiresIn: '1h',
+				});
+				res.status(200).send({ access_token: token });
+			}
 		})
 		.catch(next);
 }
@@ -61,11 +59,11 @@ function signUp(req, res, next) {
 }
 
 function logout(req, res, next) {
-	res.status(200).send({ access_token: 0 })
+	res.status(200).send({ access_token: 0 });
 }
 
 module.exports = {
 	login,
 	signUp,
 	logout,
-}
+};
